@@ -134,9 +134,8 @@ def run_tests():
         for test in TESTS:
             if not limit or any(l in test.title.lower() for l in limit):
                 test()
-        if not limit:
-            write_results()
-            print("Score: %d/%d" % (TOTAL, POSSIBLE))
+        write_results()
+        print("Score: %d/%d" % (TOTAL, POSSIBLE))
     except KeyboardInterrupt:
         pass
     if TOTAL < POSSIBLE:
